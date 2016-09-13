@@ -1,0 +1,9 @@
+<div ng-controller="frameworkCtrl" ng-init="setup()" class="row">
+  <div ng-repeat="framework in frameworks" class="col-md-6" style="margin-bottom: 60px;">
+    <div class="col-md-12 well">
+      <h3 ng-href="{{ framework.documentation}}">{{ framework.name }}</h3>
+      <h5>By: {{ framework.author }}</h5>
+      <h6>Download: {{ framework.source }}</h6>
+    </div>
+  </div>
+</div>
