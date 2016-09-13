@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   get '/' => 'welcome#home'
   get '/frameworks' => 'js_frameworks#index'
+
+  namespace :api do
+    namespace :v1 do
+      get '/frameworks' => 'js_frameworks#index'
+    end
+  end
 end
