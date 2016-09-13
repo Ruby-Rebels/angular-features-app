@@ -7,5 +7,19 @@
         $scope.frameworks = response.data;
       });
     }
+
+    $scope.favorite = function(framework) {
+      framework.favorite = framework.favorite ? 0 : 1
+      // rails prefers to pass numbers/strings in the params instead of booleans
+      // 0 is falsey in JS - so set favorite to 0 if 1, 1 if 0
+      // Then Rails can handle this appropriately
+      var frameworkParams = {
+        framework_id: framework.id,
+        favorite: framework.favorite
+      }
+      $http.post('/api/v1/favorites.json', frameworkParams).then(function(response) {
+        framework.favoriteMessage = response.data.success;
+      });
+    }
   });
 })();

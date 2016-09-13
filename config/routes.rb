@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/frameworks' => 'js_frameworks#index'
+      post '/favorites' => 'favorites#create'
     end
   end
 end

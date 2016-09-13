@@ -1,9 +1,11 @@
 <div ng-controller="frameworkCtrl" ng-init="setup()" class="row">
-  <div ng-repeat="framework in frameworks" class="col-md-6" style="margin-bottom: 60px;">
+  <div ng-repeat="framework in frameworks" class="col-md-6 framework-well">
     <div class="col-md-12 well">
       <h3 ng-href="{{ framework.documentation}}">{{ framework.name }}</h3>
+      <div ng-if="framework.favoriteMessage" class="alert alert-success favorite-alert" role="alert">{{framework.favoriteMessage}}</div>
       <h5>By: {{ framework.author }}</h5>
       <h6>Download: {{ framework.source }}</h6>
+      <i ng-click="favorite(framework)" ng-class="{'fa-heart': framework.favorite, 'fa-heart-o': !framework.favorite}" class="fa fa-lg pull-right heart" aria-hidden="true"></i>
     </div>
   </div>
 </div>

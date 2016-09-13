@@ -4,4 +4,5 @@ json.array! @js_frameworks.each do |framework|
   json.author framework.author
   json.source framework.source
   json.documentation framework.documentation
+  json.favorite @favorites.include?(framework)
 end
