@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :favorites
   has_many :js_frameworks, through: :favorites
+  has_many :comments
 end
