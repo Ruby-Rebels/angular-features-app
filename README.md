@@ -17,3 +17,11 @@ The navbar will guide you to the various features. Check out the code following 
 * Go to `routes.rb` to see which controller and action are run when a `GET` request is made to `/frameworks`.
 * Now you know the controller and view that are used.
 * To see the JS code, you simply go to the view and look at `ng-controller=`. That will tell you which JS controller is being used. I've named these by convention, so the controller name should match the file name.
+
+## To get newer commits!!
+
+I will continue to add to this, so if you want the newest changes, run:
+```bash
+$ git pull origin master
+$ rake db:migrate # to make sure you update your database if I have updated mine
+```
