@@ -10,6 +10,8 @@ $ rake db:seed
 $ rails s
 ```
 
+You can login with any of the users found in `db/seeds.rb`
+
 The navbar will guide you to the various features. Check out the code following these steps:
 * look at the route in the url bar. For example, the Favorite Example is routed to "/frameworks".
 * Go to `routes.rb` to see which controller and action are run when a `GET` request is made to `/frameworks`.
