@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get '/frameworks' => 'js_frameworks#index'
       get '/frameworks/:id' => 'js_frameworks#show'
       post '/favorites' => 'favorites#create'
+      post '/comments' => 'comments#create'
     end
   end
 end
