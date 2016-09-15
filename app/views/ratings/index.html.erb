@@ -1,0 +1,11 @@
+<div ng-controller="ratingsCtrl" ng-init="setup()" class="row">
+  {{ message }}
+  <div ng-repeat="framework in frameworks" class="col-md-6 framework-well">
+    <div class="col-md-12 well">
+      <h3 ng-href="{{ framework.documentation}}">{{ framework.name }}</h3>
+      <h5>By: {{ framework.author }}</h5>
+      <h6>Download: {{ framework.source }}</h6>
+      <i class="star-rating fa fa-lg" ng-repeat="star in framework.stars" ng-mouseover="fillStar(framework, star)" ng-mouseleave="emptyStar(framework, star)" ng-class="{'fa-star': star.filled, 'fa-star-o': !star.filled}" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>

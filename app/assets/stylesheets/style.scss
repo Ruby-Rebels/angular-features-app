@@ -15,6 +15,10 @@
   color: red;
 }
 
+.star-rating {
+  cursor: pointer;
+}
+
 .ng-enter, .ng-move{
   -webkit-animation: fadeIn 1s;
   -moz-animation: fadeIn 1s;

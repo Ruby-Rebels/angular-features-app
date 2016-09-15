@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/frameworks' => 'js_frameworks#index'
   get '/comments' => 'comments#index'
   get '/frameworks/:id' => 'js_frameworks#show'
+  get '/ratings' => 'ratings#index'
 
   namespace :api do
     namespace :v1 do
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
       post '/favorites' => 'favorites#create'
       post '/comments' => 'comments#create'
       patch '/comments/:id' => 'comments#update'
+      get '/ratings' => 'ratings#index'
     end
   end
 end
