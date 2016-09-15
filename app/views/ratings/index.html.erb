@@ -5,7 +5,7 @@
       <h3 ng-href="{{ framework.documentation}}">{{ framework.name }}</h3>
       <h5>By: {{ framework.author }}</h5>
       <h6>Download: {{ framework.source }}</h6>
-      <i class="star-rating fa fa-lg" ng-repeat="star in framework.stars" ng-mouseover="fillStar(framework, star)" ng-mouseleave="emptyStar(framework, star)" ng-class="{'fa-star': star.filled, 'fa-star-o': !star.filled}" aria-hidden="true"></i>
+      <i class="star-rating fa fa-lg" ng-repeat="star in framework.stars" ng-click="favoriteFramework(framework, star)" ng-mouseover="fillStar(framework, star)" ng-mouseleave="emptyStar(framework, star)" ng-class="{'fa-star': star.filled, 'fa-star-o': !star.filled}" aria-hidden="true"></i>
     </div>
   </div>
 </div>

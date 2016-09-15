@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       post '/comments' => 'comments#create'
       patch '/comments/:id' => 'comments#update'
       get '/ratings' => 'ratings#index'
+      post '/ratings' => 'ratings#create'
     end
   end
 end

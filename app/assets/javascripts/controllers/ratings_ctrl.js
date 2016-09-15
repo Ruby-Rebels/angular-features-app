@@ -4,8 +4,21 @@
   angular.module('app').controller('ratingsCtrl', function($scope, $http) {
     $http.get('/api/v1/ratings.json').then(function(response) {
       $scope.frameworks = response.data;
-      fillStars()
+      fillStars();
     })
+
+    $scope.favoriteFramework = function(framework, star) {
+      console.log(star)
+      var favoriteParams = {
+        framework_id: framework.id,
+        rate: star.rating
+      }
+      $http.post('/api/v1/ratings.json', favoriteParams).success(function(response) {
+        framework.user_rating = response.user_rating
+        fillStars();
+      })
+    }
+
     function fillStars() {
       $scope.frameworks.forEach(function(framework) {
         framework.stars.forEach(function(star) {
