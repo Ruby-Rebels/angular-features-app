@@ -14,13 +14,45 @@
         framework_id: framework.id
       }
       $http.post('/api/v1/comments.json', commentParams).success(function(response) {
-        console.log(response);
         $scope.framework = response;
-        $scope.success = response.success
+        $scope.createdMessage = response.created
         $scope.error = null;
         $scope.comment = null;
         $timeout(function() {
-          $scope.success = null;
+          $scope.createdMessage = null;
+        }, 1500)
+      }).error(function(response) {
+        $scope.error = response.error;
+        $scope.success = null;
+      })
+    }
+
+    $scope.showEdit = function(framework, comment) {
+      if (framework.email === comment.email) {
+        comment.edit = true;
+      }
+    }
+
+    $scope.removeEdit = function(comment) {
+      comment.edit = false;
+    }
+
+    $scope.editComment = function(comment) {
+      comment.editable = true;
+    }
+
+    $scope.updateComment = function(comment) {
+      var commentParams = {
+        comment_text: comment.comment_text
+      }
+      $http.patch('/api/v1/comments/' + comment.comment_id.toString() + '.json', commentParams)
+      .success(function(response) {
+        $scope.framework = response;
+        $scope.updatedMessage = response.updated
+        $scope.error = null;
+        $scope.comment = null;
+        $timeout(function() {
+          $scope.updatedMessage = null;
         }, 1500)
       }).error(function(response) {
         $scope.error = response.error;

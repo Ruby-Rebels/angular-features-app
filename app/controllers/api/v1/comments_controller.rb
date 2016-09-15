@@ -8,10 +8,20 @@ class Api::V1::CommentsController < ApplicationController
       user_id: current_user.id
     )
     if comment.save
-      @framework = JsFramework.find_by(id: params[:framework_id])
+      @framework = comment.js_framework
       render 'create'
     else
       render json: { error: "Comment can't be blank" }, status: 422
+    end
+  end
+
+  def update
+    comment = Comment.find_by(id: params[:id])
+    if comment.update(comment_text: params[:comment_text])
+      @framework = comment.js_framework
+      render 'create'
+    else
+      render json: {error: "Comment can't be blank"}
     end
   end
 end
