@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :js_frameworks, through: :favorites
   has_many :comments
   has_many :ratings
+  has_many :messages
+  has_many :chatrooms, through: :messages
 end

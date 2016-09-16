@@ -16,6 +16,18 @@ Rails.application.routes.draw do
       patch '/comments/:id' => 'comments#update'
       get '/ratings' => 'ratings#index'
       post '/ratings' => 'ratings#create'
+
+      get '/chatrooms/:id' => 'chatrooms#show'
+      get '/messages' => 'messages#index'
+      get '/messages/new' => 'messages#new'
+      post '/messages' => 'messages#create'
     end
   end
+
+  get '/chatrooms/new' => 'chatrooms#new'
+  post '/chatrooms' => 'chatrooms#create'
+  get '/chatrooms/:id' => 'chatrooms#show'
+
+
+  mount ActionCable.server => '/cable'
 end

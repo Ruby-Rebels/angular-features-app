@@ -1,0 +1,20 @@
+<div class="row col-md-8 col-md-offset-2">
+  <h1>Create a Chatroom on a JS Framework topic</h1>
+  <div class="well">
+    <div class="chatroom-form">
+      <%= form_tag("/chatrooms", method: 'post') do %>
+        <div class="input-group">
+          <span class="input-group-addon">topic:</span>
+          <%= text_field_tag :topic, nil, class: "form-control"%>
+        </div>
+        <%= submit_tag "Save", class: "btn btn-primary", id: "create-chatroom" %>
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="list-unstyled">
+    <% @chatrooms.each do |chatroom| %>
+      <li><h3><%= link_to chatroom.topic, "/chatrooms/#{chatroom.id}" %></h3></li>
+    <% end %>
+  </ul>
+</div>

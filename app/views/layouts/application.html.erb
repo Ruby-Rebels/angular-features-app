@@ -3,6 +3,7 @@
   <head>
     <title>AngularFeaturesApp</title>
     <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -16,6 +17,7 @@
             <li class=""><a href="/frameworks">Favorite example</a></li>
             <li><a href="/comments">Comments</a></li>
             <li><a href="/ratings">Ratings</a></li>
+            <li><a href="/chatrooms/new">Chatroom</a></li>
           </ul>
            <ul class="nav navbar-nav navbar-right">
              <% if user_signed_in? %>
