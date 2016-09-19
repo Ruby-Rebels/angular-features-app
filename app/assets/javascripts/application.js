@@ -16,4 +16,5 @@
 //= require angular
 //= require angular-animate
 //= require app
+//= require charts.min
 //= require_tree .

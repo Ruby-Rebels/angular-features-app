@@ -18,4 +18,10 @@ class JsFramework < ApplicationRecord
     #   nil
     # end
   end
+
+  def average_rating
+    # fancy way to sum up all the rates on my Rating object
+    rates = ratings.inject(0) {|sum, rating| sum + rating.rate}
+    rates == 0 ? rates : rates / ratings.size
+  end
 end

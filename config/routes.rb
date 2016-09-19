@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/comments' => 'comments#index'
   get '/frameworks/:id' => 'js_frameworks#show'
   get '/ratings' => 'ratings#index'
+  get '/charts' => 'charts#index'
 
   namespace :api do
     namespace :v1 do
@@ -21,6 +22,8 @@ Rails.application.routes.draw do
       get '/messages' => 'messages#index'
       get '/messages/new' => 'messages#new'
       post '/messages' => 'messages#create'
+
+      get '/charts' => 'charts#index'
     end
   end
 
