@@ -1,0 +1,23 @@
+<%= form_tag("/frameworks/#{@framework.id}", method: 'patch', :enctype =>"multipart/form-data") do %>
+  <div>
+    <%= label_tag(:name) %>
+    <%= text_field_tag(:name, @framework.name) %>
+  </div>
+  <div>
+    <%= label_tag(:author) %>
+    <%= text_field_tag(:author, @framework.author) %>
+  </div>
+  <div>
+    <%= label_tag(:documentation) %>
+    <%= text_field_tag(:documentation, @framework.documentation) %>
+  </div>
+  <div>
+    <%= label_tag(:source) %>
+    <%= text_field_tag(:source, @framework.source) %>
+  </div>
+  <div>
+    <%= label_tag(:photo) %>
+    <%= file_field_tag(:photo) %>
+  </div>
+  <%= submit_tag("Save") %>
+<% end %>

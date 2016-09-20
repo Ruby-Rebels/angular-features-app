@@ -4,6 +4,7 @@ class JsFramework < ApplicationRecord
   has_many :users, through: :favorites
   has_many :comments
   has_many :ratings
+  mount_uploader :photo, FrameworkPhotoUploader
 
   def current_user_rating(user)
     # I get 'ratings' from the above has_many :ratings

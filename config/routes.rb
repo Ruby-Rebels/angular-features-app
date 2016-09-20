@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/frameworks' => 'js_frameworks#index'
   get '/comments' => 'comments#index'
   get '/frameworks/:id' => 'js_frameworks#show'
+  get '/frameworks/:id/edit' => 'js_frameworks#edit'
+  patch '/frameworks/:id' => 'js_frameworks#update'
   get '/ratings' => 'ratings#index'
   get '/charts' => 'charts#index'
 
