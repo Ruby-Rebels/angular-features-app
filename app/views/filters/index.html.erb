@@ -1,0 +1,14 @@
+<h2>Filter Frameworks by feature:</h2>
+<div ng-controller="filtersCtrl">
+  <div class="col-md-4">
+    <h4>By Rating</h4>
+    <ul class="list-unstyled">
+      <li ng-repeat="rating in ratings"><input type="checkbox" ng-change="searchRating(rating, $index)" ng-model="rating.checked" ng-value="rating.value"> {{ rating.value }} star</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <div ng-repeat="framework in frameworks">
+      <h2><a href="{{ framework.documentation }}">{{ framework.author }} | {{ framework.name }}</a></h2>
+    </div>
+  </div>
+</div>
