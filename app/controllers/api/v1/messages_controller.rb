@@ -8,7 +8,7 @@ class Api::V1::MessagesController < ApplicationController
       chatroom_id: params[:chatroom_id]
     )
     if @message.save
-      ActionCable.server.broadcast 'messages',
+      ActionCable.server.broadcast "messages-#{params[:chatroom_id]}",
         content: @message.content,
         email: @message.user.email
       render 'show.json.jbuilder'
