@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/frameworks/:id' => 'js_frameworks#show'
   get '/ratings' => 'ratings#index'
   get '/charts' => 'charts#index'
+  get '/filters' => 'filters#index'
 
   namespace :api do
     namespace :v1 do
@@ -24,6 +25,9 @@ Rails.application.routes.draw do
       post '/messages' => 'messages#create'
 
       get '/charts' => 'charts#index'
+
+      get '/search' => 'filters#search'
+      get '/filters' => 'filters#index'
     end
   end
 
